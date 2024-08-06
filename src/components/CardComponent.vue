@@ -58,6 +58,10 @@
         upperContent: {
             type: Boolean,
             required: false,
+        },
+        htmlContent: {
+            type: String,
+            required: false,
         }
     });
 
@@ -114,9 +118,10 @@
             <h1 ref="cardTitle">{{ title }}</h1>
             <h2 ref="cardSubtitle">{{ subtitle }}</h2>
         </div>
-        <div ref="cardContent" class="card_content">
+        <div ref="cardContent" class="card_content" v-if="!htmlContent">
             <p>{{ content }}</p>
         </div>
+        <div ref="cardContent" class="card_content" v-else v-html="htmlContent"></div>
     </div>
 </template>
 <style scoped>
