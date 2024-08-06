@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import {defineAsyncComponent} from 'vue'
 
-  const HeroSection = defineAsyncComponent(() => import('./components/HeroSection.vue'))
+  const CardComponent = defineAsyncComponent(() => import('./components/CardComponent.vue'))
 </script>
 
 <template> 
@@ -10,7 +10,10 @@
   </header>
 
   <main>
-    <HeroSection />
+    <CardComponent 
+      upperTitle
+      upperSubtitle
+    />
   </main>
 </template>
 
